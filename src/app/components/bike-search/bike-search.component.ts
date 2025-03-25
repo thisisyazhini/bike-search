@@ -19,7 +19,6 @@ export class BikeSearchComponent implements OnInit {
   ngOnInit() {}
 
   fetchBikes() {
-    console.log(this.bikeLocation);
     this.bikeService
       .getBikesBasedOnLocation(this.bikeLocation)
       .subscribe((data) => (this.bikes = data.bikes));
