@@ -1,4 +1,6 @@
-<ul class="list bg-base-100 rounded-box shadow-md">
+<ul
+  class="max-w-2xl list bg-base-100 rounded-box shadow-md mx-auto border-primary border-1 border-dashed p-2"
+>
   @for (bike of bikes; track bike.id) {
   <li class="list-row">
     <div>
@@ -51,6 +53,6 @@
   </li>
 
   } @empty {
-  <li>There are no bikes.</li>
+  <li>There are no bikes available for this location.</li>
   }
 </ul>
