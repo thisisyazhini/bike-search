@@ -22,4 +22,26 @@ export interface Bike {
   year?: number;
   propulsion_type_slug: string;
   cycle_type_slug: string;
+  registration_created_at: number;
+  registration_updated_at: number;
+  api_url: string;
+  manufacturer_id: number;
+  paint_description: any;
+  name: any;
+  frame_size: any;
+  rear_tire_narrow: boolean;
+  front_tire_narrow: any;
+  type_of_cycle: string;
+  test_bike: boolean;
+  rear_wheel_size_iso_bsd: any;
+  front_wheel_size_iso_bsd: any;
+  handlebar_type_slug: any;
+  frame_material_slug: any;
+  front_gear_type_slug: any;
+  rear_gear_type_slug: any;
+  extra_registration_number: any;
+  additional_registration: any;
+  stolen_record: any;
+  public_images: [];
+  components: [];
 }
