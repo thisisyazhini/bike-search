@@ -3,6 +3,7 @@ import { BikeService } from '../../services/bike.service';
 import { Bike } from '../../models/bike';
 import { FormsModule } from '@angular/forms';
 import { BikeListComponent } from '../bike-list/bike-list.component';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-bike-search',
@@ -11,7 +12,8 @@ import { BikeListComponent } from '../bike-list/bike-list.component';
 })
 export class BikeSearchComponent implements OnInit {
   bikeLocation = '';
-  bikes: Bike[] = [];
+  bikes: Bike[] | undefined = undefined;
+  loading = false;
   private bikeService = inject(BikeService);
 
   constructor() {}
@@ -19,8 +21,18 @@ export class BikeSearchComponent implements OnInit {
   ngOnInit() {}
 
   fetchBikes() {
+    this.loading = true;
     this.bikeService
       .getBikesBasedOnLocation(this.bikeLocation)
-      .subscribe((data) => (this.bikes = data.bikes));
+      .pipe(
+        catchError((_, caught) => {
+          this.loading = false;
+          return caught;
+        })
+      )
+      .subscribe((data) => {
+        this.bikes = data.bikes;
+        this.loading = false;
+      });
   }
 }

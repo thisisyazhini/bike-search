@@ -25,6 +25,10 @@
   </label>
   <button class="btn btn-primary" (click)="fetchBikes()">Show bikes</button>
 </div>
-@if(bikeLocation){
+@if(loading){
+<div class="my-10 text-center">
+  <span class="loading loading-ring loading-xl"></span>
+</div>
+} @if(bikes && !loading){
 <app-bike-list [bikes]="bikes"></app-bike-list>
 }
