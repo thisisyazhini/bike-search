@@ -42,6 +42,15 @@ export interface Bike {
   extra_registration_number: any;
   additional_registration: any;
   stolen_record: any;
-  public_images: [];
+  public_images: PublicImage[];
   components: [];
+}
+
+interface PublicImage {
+  name: string;
+  full: string;
+  large: string;
+  medium: string;
+  thumb: string;
+  id: number;
 }

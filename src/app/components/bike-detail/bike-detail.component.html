@@ -1,0 +1,48 @@
+@if(bike){
+<main
+  class="p-10 border border-dashed border-primary m-10 rounded grid grid-cols-2 gap-10 h"
+>
+  <div class="carousel rounded-box">
+    @for (bikeImage of bike.public_images; track bikeImage.id) {
+    <div class="carousel-item w-full">
+      <img class="w-full max-h-screen" [src]="bikeImage.large" />
+    </div>
+    }
+  </div>
+
+  <div class="space-y-6 flex flex-col">
+    <div class="space-y-6 flex-1">
+      <h2 class="text-6xl font-bold">{{ bike.title }}</h2>
+      <p>{{ bike.description }}</p>
+      <div class="stats stats-vertical shadow capitalize flex-1">
+        <div class="stat">
+          <div class="stat-title">Name</div>
+          <div class="stat-value">{{ bike.name }}</div>
+          <div class="stat-desc">{{ bike.manufacturer_name }}</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-title">Pedal Type</div>
+          <div class="stat-value">{{ bike.propulsion_type_slug }}</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-title">Status</div>
+          <div class="stat-value">{{ bike.status }}</div>
+          <div class="stat-desc">{{ bike.stolen_location }}</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-title">Frame</div>
+          <div class="stat-value">{{ bike.frame_model }}</div>
+          <div class="stat-desc">{{ bike.frame_colors.join(", ") }}</div>
+          <div class="stat-desc">{{ bike.frame_material_slug }}</div>
+        </div>
+      </div>
+    </div>
+    <a [href]="bike.url" target="_blank" class="text-sm">
+      Find more information on Bike index ↗︎
+    </a>
+  </div>
+</main>
+}
