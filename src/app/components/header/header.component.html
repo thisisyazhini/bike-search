@@ -1,10 +1,17 @@
-<div class="bg-primary text-2xl px-10 py-4 mb-4 flex justify-between">
+<div
+  class="bg-primary text-primary-content text-2xl px-10 py-4 mb-4 flex justify-between"
+>
   <h1>
     <a [routerLink]="['/']"> Bike Search</a>
   </h1>
+
   <div>
     <label class="toggle toggle-xl text-base-content">
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        [checked]="currentTheme === 'dracula'"
+        (change)="toggleTheme()"
+      />
       <svg
         aria-label="light"
         xmlns="http://www.w3.org/2000/svg"

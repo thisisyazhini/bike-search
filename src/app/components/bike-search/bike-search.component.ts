@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BikeService } from '../../services/bike.service';
 import { Bike } from '../../models/bike';
 import { FormsModule } from '@angular/forms';
@@ -10,15 +10,14 @@ import { catchError } from 'rxjs';
   templateUrl: 'bike-search.component.html',
   imports: [FormsModule, BikeListComponent],
 })
-export class BikeSearchComponent implements OnInit {
+export class BikeSearchComponent {
   bikeLocation = '';
+
   bikes: Bike[] | undefined = undefined;
+
   loading = false;
+
   private bikeService = inject(BikeService);
-
-  constructor() {}
-
-  ngOnInit() {}
 
   fetchBikes() {
     this.loading = true;

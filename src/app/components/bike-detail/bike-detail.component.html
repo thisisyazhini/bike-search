@@ -11,11 +11,12 @@
     <img class="w-full max-h-screen object-cover" src="/noimage.jpg" />
     }
   </div>
+
   <div class="space-y-6 flex flex-col">
     <div class="space-y-6 flex-1">
       <h2 class="text-6xl font-bold">{{ bike.title }}</h2>
       <p>{{ bike.description }}</p>
-      <div class="stats stats-vertical shadow capitalize flex-1">
+      <div class="stats stats-vertical w-full capitalize flex-1">
         <div class="stat">
           <div class="stat-title">Name</div>
           <div class="stat-value">{{ bike.name }}</div>
@@ -41,6 +42,7 @@
         </div>
       </div>
     </div>
+
     <a [href]="bike.url" target="_blank" class="text-sm">
       Find more information on Bike index ↗︎
     </a>

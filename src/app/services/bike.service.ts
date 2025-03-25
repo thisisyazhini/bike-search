@@ -9,10 +9,15 @@ export class BikeService {
   private http = inject(HttpClient);
 
   getBikesBasedOnLocation(location: string): Observable<{ bikes: Bike[] }> {
-    return this.http.get<{ bikes: Bike[] }>(
-      `${apiBaseUrl}/search?page=1&per_page=25&location=${location}&distance=10&stolenness=stolen`,
-      { params: {} }
-    );
+    return this.http.get<{ bikes: Bike[] }>(`${apiBaseUrl}/search`, {
+      params: {
+        page: 1,
+        per_page: 25,
+        location,
+        distance: 10,
+        stolenness: 'stolen',
+      },
+    });
   }
 
   getBikeById(id: number): Observable<{ bike: Bike }> {

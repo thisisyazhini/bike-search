@@ -8,7 +8,9 @@ import { Bike } from '../../models/bike';
 })
 export class BikeDetailComponent implements OnInit {
   @Input() id!: number;
+
   bike: Bike | undefined = undefined;
+
   private bikeService = inject(BikeService);
 
   ngOnInit() {

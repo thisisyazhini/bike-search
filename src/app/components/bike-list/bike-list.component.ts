@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Bike } from '../../models/bike';
 import { RouterLink } from '@angular/router';
 
@@ -7,10 +7,6 @@ import { RouterLink } from '@angular/router';
   templateUrl: 'bike-list.component.html',
   imports: [RouterLink],
 })
-export class BikeListComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-
+export class BikeListComponent {
   @Input({ required: true }) bikes: Bike[] = [];
 }
