@@ -5,11 +5,12 @@
   <div class="carousel rounded-box">
     @for (bikeImage of bike.public_images; track bikeImage.id) {
     <div class="carousel-item w-full">
-      <img class="w-full max-h-screen" [src]="bikeImage.large" />
+      <img class="w-full max-h-screen object-cover" [src]="bikeImage.large" />
     </div>
+    } @if(bike.public_images.length === 0) {
+    <img class="w-full max-h-screen object-cover" src="/noimage.jpg" />
     }
   </div>
-
   <div class="space-y-6 flex flex-col">
     <div class="space-y-6 flex-1">
       <h2 class="text-6xl font-bold">{{ bike.title }}</h2>
