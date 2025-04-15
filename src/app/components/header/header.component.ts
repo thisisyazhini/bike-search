@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
       this.renderer.setAttribute(
         document.documentElement,
         'data-theme',
-        'dark'
+        'dracula'
       );
     } else {
       this.renderer.setAttribute(

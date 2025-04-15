@@ -15,7 +15,7 @@ export class BikeService {
         per_page: 25,
         location,
         distance: 10,
-        stolenness: 'stolen',
+        stolenness: 'proximity',
       },
     });
   }
